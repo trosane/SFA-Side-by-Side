@@ -1,0 +1,29 @@
+.THIS {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    padding: 10px;
+}
+
+.THIS h1 {
+    font-size: 2em;
+}
+
+.THIS.new {
+    background: #ffcc66;
+    display: block;
+}
+
+.THIS.working {
+    background: #59a659;
+    display: block;
+}
+
+.THIS.escalated {
+    background: #ff884d;
+    display: block;
+}
+
+.THIS.closed {
+    background: #63a6e9;
+    display: block;
+}

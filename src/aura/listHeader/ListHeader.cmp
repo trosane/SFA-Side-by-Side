@@ -1,0 +1,21 @@
+<aura:component>
+    <aura:attribute name="cases" type="Case[]"/>
+    <aura:attribute name="caseType" type="String"/>
+
+    <div class="{!v.caseType}">
+        <h1>{!v.cases.length}</h1>
+            <aura:if isTrue="{!v.caseType == 'new'}">
+                <lightning:icon iconName="action:approval" class="slds-float_right icon"></lightning:icon>
+            </aura:if>
+            <aura:if isTrue="{!v.caseType == 'working'}">
+                <lightning:icon iconName="action:defer" class="slds-float_right icon"></lightning:icon>
+            </aura:if>
+            <aura:if isTrue="{!v.caseType == 'escalated'}">
+                <lightning:icon iconName="action:priority" class="slds-float_right icon"></lightning:icon>
+            </aura:if>
+            <aura:if isTrue="{!v.caseType == 'closed'}">
+                <lightning:icon iconName="action:close" class="slds-float_right icon"></lightning:icon>
+            </aura:if>
+        <h2>{!v.caseType}</h2>
+    </div>
+</aura:component>

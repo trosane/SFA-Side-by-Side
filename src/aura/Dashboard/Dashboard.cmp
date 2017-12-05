@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="case" type="Case"/>
+    <div class="slds-grid slds-wrap">
+        <header class="slds-media slds-media_center">
+            <div class="slds-media__body">
+                <h2>
+                    <span class="slds-text-heading_small">Action Required</span>
+                </h2>
+              </div>
+        </header>
+        <div class="slds-size--1-of-1"><c:Case /></div>
+    </div>
+</aura:component>

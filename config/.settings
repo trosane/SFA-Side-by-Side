@@ -1,0 +1,17 @@
+{
+    "projectName": "SAF Lightning Component",
+    "username": "trent@testorg.com",
+    "id": "7e8e45f0-d6d9-11e7-a282-0fb4c97618f4",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://my-dank-domain-dev-ed.my.salesforce.com",
+    "workspace": "C:\\Users\\Trent.Rosane\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

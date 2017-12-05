@@ -1,0 +1,29 @@
+<aura:component>
+    <aura:attribute name="cases" type="Case[]"/>
+
+    <table class="slds-table">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Id">Id</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Priority">Priority</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration var="case" items="{!v.cases}" end="4">
+            <tr>
+                <td scope="row" data-label="Id">
+                    <div class="slds-truncate" title="Id"><a href="{!'/one/one.app#/sObject/' + case.Id + '/view'}">{!case.Id}</a></div>
+                </td>
+                <td scope="row" data-label="Id">
+                    <div class="slds-truncate" title="Priority">{!case.Priority}</div>
+                </td>
+            </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    <a href="{!'/one/one.app#/sObject/Case/list?filterName=Recent'}">Review All</a>
+</aura:component>

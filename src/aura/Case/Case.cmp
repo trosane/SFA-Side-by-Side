@@ -1,0 +1,45 @@
+<aura:component controller="GetCaseController">
+
+    <!-- Action Required attributes -->
+    <aura:attribute name="newCases" type="Case[]"/>
+    <aura:attribute name="workingCases" type="Case[]"/>
+    <aura:attribute name="escalatedCases" type="Case[]"/>
+    <aura:attribute name="closedCases" type="Case[]"/>
+
+    <!-- Action Required Database Calls -->
+    <aura:handler name="init" value="{!this}" action="{!c.loadCases}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.loadWorkingCases}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.loadEscalatedCases}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.loadClosedCases}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.hideComponent}"/>
+
+    <!-- Action Required Component -->
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size--1-of-4 slds-medium-size--1-of-2 slds-small-size--1-of-1 case">
+            <c:ListHeader cases="{!v.newCases}" caseType="new"/>
+            <c:ListView cases="{!v.newCases}" />
+        </div>
+
+        <div class="slds-size--1-of-4 slds-medium-size--1-of-2 slds-small-size--1-of-1 case">
+            <c:ListHeader cases="{!v.workingCases}" caseType="working"/>
+            <c:ListView cases="{!v.workingCases}" />
+        </div>
+
+        <div class="slds-size--1-of-4 slds-medium-size--1-of-2 slds-small-size--1-of-1 case">
+            <c:ListHeader cases="{!v.escalatedCases}" caseType="escalated"/>
+            <c:ListView cases="{!v.escalatedCases}"/>
+            </div>
+
+        <div class="slds-size--1-of-4 slds-medium-size--1-of-2 slds-small-size--1-of-1 case">
+            <c:ListHeader cases="{!v.closedCases}" caseType="closed"/>
+            <c:ListView cases="{!v.closedCases}"/>
+        </div>
+    </div>
+
+
+    <!-- Side By Side Component Left -->
+    <div class="slds-grid slds-wrap">
+        <c:allAccountsList aura:id="accountsList" />
+    </div>
+
+</aura:component>

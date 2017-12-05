@@ -1,0 +1,52 @@
+<aura:component controller="GetCaseController">
+    <!-- Attributes -->
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:attribute name="id" type="String"/>
+
+    <!-- Database calls -->
+    <aura:handler name="init" value="{!this}" action="{!c.loadAllAccounts}"/>
+    <div class="slds-size--1-of-2">
+        <table class="slds-table">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Type">Type</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Account Number">Account #</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration var="account" items="{!v.accounts}" >
+                        <tr class="table-rows" onclick="{!c.navigateToComponent}" data-recId="{!account.Id}">
+                            <td scope="row" data-label="Name">
+                                <div class="slds-truncate" title="Name">{!account.Name}</div>
+                            </td>
+                            <td scope="row" data-label="Phone">
+                                <div class="slds-truncate" title="Phone">{!account.Phone}</div>
+                            </td>
+                            <td scope="row" data-label="Type">
+                                <div class="slds-truncate" title="Type">{!account.Type}</div>
+                            </td>
+                            <td scope="row" data-label="AccountNumber">
+                                <div class="slds-truncate" title="AccountNumber">{!account.AccountNumber}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+    </div>
+
+    <div class="slds-size--1-of-2">
+        <c:RecordDetail aura:id="recordDetail" accountId="{!v.id}" />
+    </div>
+
+
+</aura:component>
