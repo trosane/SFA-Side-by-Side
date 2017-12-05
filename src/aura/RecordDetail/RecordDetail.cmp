@@ -1,7 +1,6 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId">
         <aura:attribute name="accountId" type="String"/>
-        
-        <aura:handler event="c:aeEvent" action="{!c.handleAppEvent}"/>
+        <aura:handler event="c:viewRecord" action="{!c.handleAppEvent}"/>
 
         <force:recordView recordId="{!v.accountId}" type="FULL"/>     
 </aura:component>

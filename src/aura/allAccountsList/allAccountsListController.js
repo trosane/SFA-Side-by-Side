@@ -12,7 +12,7 @@
 	fireAppEvent : function(component, event) {
 		console.log("click fired");
 		var id = event.currentTarget.getAttribute("data-recId");
-		var appEvent = $A.get("e.c:aeEvent");
+		var appEvent = $A.get("e.c:viewRecord");
 		appEvent.setParams({
 			"id" : id
 		});
