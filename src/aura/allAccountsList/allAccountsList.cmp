@@ -5,6 +5,10 @@
 
     <!-- Database calls -->
     <aura:handler name="init" value="{!this}" action="{!c.loadAllAccounts}"/>
+
+    <!-- Aura Events -->
+    <aura:registerEvent name="viewRecord" type="c:viewRecord"/>
+
     <div class="slds-size--1-of-2">
         <table class="slds-table">
                 <thead>
@@ -25,7 +29,7 @@
                 </thead>
                 <tbody>
                     <aura:iteration var="account" items="{!v.accounts}" >
-                        <tr class="table-rows" onclick="{!c.navigateToComponent}" data-recId="{!account.Id}">
+                        <tr class="table-rows" onclick="{!c.fireAppEvent}" data-recId="{!account.Id}">
                             <td scope="row" data-label="Name">
                                 <div class="slds-truncate" title="Name">{!account.Name}</div>
                             </td>
@@ -43,10 +47,5 @@
                 </tbody>
             </table>
     </div>
-
-    <div class="slds-size--1-of-2">
-        <c:RecordDetail aura:id="recordDetail" accountId="{!v.id}" />
-    </div>
-
 
 </aura:component>

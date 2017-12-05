@@ -39,7 +39,12 @@
 
     <!-- Side By Side Component Left -->
     <div class="slds-grid slds-wrap">
-        <c:allAccountsList aura:id="accountsList" />
+        <div class="slds-size--1-of-2 slds-small-size--1-of-1">
+            <c:allAccountsList aura:id="accountsList" />
+        </div>
+        <div class="slds-size--1-of-2 slds-small-size--1-of-1">
+            <c:RecordDetail aura:id="recordDetail" />
+        </div>
     </div>
 
 </aura:component>

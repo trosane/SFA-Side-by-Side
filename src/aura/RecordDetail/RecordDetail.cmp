@@ -1,7 +1,7 @@
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
-        <aura:attribute name="accountId" type="String" access="GLOBAL"/>
-        <aura:method name="changeRecord" action="{!c.changeRecord}">
-            <aura:attribute name="param1" type="String"/>
-        </aura:method>
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId">
+        <aura:attribute name="accountId" type="String"/>
+        
+        <aura:handler event="c:aeEvent" action="{!c.handleAppEvent}"/>
+
         <force:recordView recordId="{!v.accountId}" type="FULL"/>     
 </aura:component>
